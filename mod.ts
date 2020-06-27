@@ -41,6 +41,9 @@ export function extractModUrlsFromModList(
     // Slugify the mod name
     modName = slugify(modName, { remove: /[^a-zA-Z\d\s\-]/, lower: true });
 
+    // Remove trailing dashes
+    modName = modName.replace(/\-+$/, "");
+
     // Fix mods which insist on changing their CF page slug.
     // Submit PR for missing entries.
     if (modName === "minetogether") modName = "creeperhost-minetogether";
