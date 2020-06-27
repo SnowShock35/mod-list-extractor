@@ -1,7 +1,7 @@
 import { slugify } from "https://deno.land/x/slugify/mod.ts";
 
 // Change a few settings of slugify to match with how CF generates slugs.
-slugify.extend({ "&": "", "-": "-" });
+slugify.extend({ "&": "", "-": "-", ".": "-" });
 
 export function extractModListFromFile(file: string): Array<string> {
   // Turn string into array where each element is a an
