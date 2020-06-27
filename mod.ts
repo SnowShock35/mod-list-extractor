@@ -48,6 +48,7 @@ export function extractModUrlsFromModList(
     // Submit PR for missing entries.
     if (modName === "minetogether") modName = "creeperhost-minetogether";
     if (modName === "foamfix") modName = "foamfix-optimization-mod";
+    if (modName === "bonsai-trees-2") modName = "bonsai-trees";
 
     // Return the full URL using the slug-ified mod name
     return "https://curseforge.com/minecraft/mc-mods/" + modName;
