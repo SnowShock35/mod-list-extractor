@@ -44,11 +44,17 @@ export function extractModUrlsFromModList(
     // Remove trailing dashes
     modName = modName.replace(/\-+$/, "");
 
-    // Fix mods which insist on changing their CF page slug.
+    // Fix all the edge cases that slugify fails to slug correctly
     // Submit PR for missing entries.
     if (modName === "minetogether") modName = "creeperhost-minetogether";
     if (modName === "foamfix") modName = "foamfix-optimization-mod";
     if (modName === "bonsai-trees-2") modName = "bonsai-trees";
+    if (modName === "accidentally-circumstantial-eventsace") {
+      modName = "accidentally-circumstantial-events-ace";
+    }
+    if (modName === "infinibows-infinity-bow-fix") modName = "infinibows";
+    if (modName === "shut-the-fdollarpercent-up") modName = "shut-the-f-up";
+    if (modName === "sprinklesforvanilla") modName = "sprinkles_for_vanilla";
 
     // Return the full URL using the slug-ified mod name
     return "https://curseforge.com/minecraft/mc-mods/" + modName;
